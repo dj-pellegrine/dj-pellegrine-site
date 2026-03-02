@@ -865,6 +865,16 @@ button {
   }
 }
 
+@media (max-width: 520px) {
+  .hero-actions {
+    margin-bottom: 28px;
+  }
+
+  #sobre {
+    margin-top: -20px;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero {
     min-height: clamp(560px, 58vh, 720px);

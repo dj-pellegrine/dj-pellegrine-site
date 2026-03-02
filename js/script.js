@@ -1,6 +1,6 @@
 const LINKS = {
   booking: "#",
-  contact: "https://open.spotify.com/artist/5YRuZbhTIox6qO4EpQraWM?si=W7euD44dQY-bg05yNUE2zA",
+  contact: "https://wa.me/qr/FJO37YAQYRELN1",
   listenSets: "#",
   fullAgenda: "#",
   viewAllSets: "https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB",
