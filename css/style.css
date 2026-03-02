@@ -576,6 +576,10 @@ button {
 .timeline-item {
   position: relative;
   padding-left: 12px;
+  max-height: 220px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.28s ease, opacity 0.2s ease, margin 0.28s ease;
 }
 
 .timeline-dot {
@@ -637,6 +641,18 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+}
+
+#agenda.agenda-collapsed .agenda-item:nth-child(n + 4) {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.button-outline.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .section-tracks .section-header-row {

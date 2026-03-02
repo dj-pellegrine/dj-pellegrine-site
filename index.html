@@ -113,7 +113,7 @@
               <span class="material-symbols-outlined" aria-hidden="true">
                 mail
               </span>
-              Contato
+              <span class="button-label">Contato</span>
             </a>
             <a
               id="linkMediaKit"
@@ -122,7 +122,7 @@
               target="_blank"
               rel="noreferrer"
             >
-              Mídia Kit
+              <span class="button-label">Mídia Kit</span>
             </a>
           </div>
         </div>
@@ -151,7 +151,7 @@
             sets e produções de extrema qualidade, fazendo os paredões tocarem
             em uma frequência de submundo que só ele sabe criar.
           </p>
-          <div class="stat-grid">
+          <div id="statsList" class="stat-grid">
             <div class="stat">
               <span class="stat-value">50k+</span>
               <span class="stat-label">Público</span>
@@ -171,52 +171,12 @@
       <section id="liveset" class="section section-sets">
         <div class="section-header-row">
           <div>
-            <h2 class="section-title">SESSIONS</h2>
+            <h2 id="sessionsTitle" class="section-title">SESSIONS</h2>
             <span class="section-underline"></span>
           </div>
         </div>
 
-        <div class="scroll-row" aria-label="Lista de live sets">
-          <article
-            class="set-card"
-            data-link="set1"
-            data-youtube="https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB"
-            tabindex="0"
-            role="button"
-          >
-            <div class="set-thumb">
-              <img src="pics/pellegrine5.jpeg" alt="Live set no EVVVA Club" />
-              <div class="set-overlay"></div>
-              <div class="set-play">
-                <span class="material-symbols-outlined" aria-hidden="true">
-                  play_arrow
-                </span>
-              </div>
-            </div>
-            <h3 class="set-title">Live Set - DJ Pellegrine Funk Sub Mundo</h3>
-            <p class="set-meta">Gravado em São Paulo</p>
-          </article>
-
-          <article
-            class="set-card"
-            data-link="set2"
-            data-youtube="https://youtu.be/aJPHglItl08?si=6hfIk8Bm7Oqih9L4"
-            tabindex="0"
-            role="button"
-          >
-            <div class="set-thumb">
-              <img src="pics/pellegrine5.jpeg" alt="Barracão Sessions" />
-              <div class="set-overlay"></div>
-              <div class="set-play">
-                <span class="material-symbols-outlined" aria-hidden="true">
-                  play_arrow
-                </span>
-              </div>
-            </div>
-            <h3 class="set-title">Set - Doca Session Funk Sub Mundo</h3>
-            <p class="set-meta">Sessão Exclusiva</p>
-          </article>
-        </div>
+        <div id="sessionsList" class="scroll-row" aria-label="Lista de live sets"></div>
       </section>
 
       <section id="agenda" class="section section-agenda">
@@ -229,94 +189,26 @@
               >
                 calendar_month
               </span>
-              <h2 class="section-title">AGENDA</h2>
+              <h2 id="agendaTitle" class="section-title">AGENDA</h2>
             </div>
           </div>
 
-          <div class="timeline" aria-label="Agenda de shows">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <h3>FESTIVAL FUNK</h3>
-                  <span class="timeline-date">21/03</span>
-                </div>
-                <div class="timeline-foot">
-                  <span class="timeline-location">
-                    <span
-                      class="material-symbols-outlined"
-                      aria-hidden="true"
-                    >
-                      location_on
-                    </span>
-                    DOKA BAR
-                  </span>
-                  <span class="timeline-link" aria-disabled="true">Sem ingressos</span>
-                </div>
-              </div>
-            </div>
+          <div id="agendaList" class="timeline" aria-label="Agenda de shows"></div>
 
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <h3>CALOURADA UNIMAX</h3>
-                  <span class="timeline-date">27/03</span>
-                </div>
-                <div class="timeline-foot">
-                  <span class="timeline-location">
-                    <span
-                      class="material-symbols-outlined"
-                      aria-hidden="true"
-                    >
-                      location_on
-                    </span>
-                    DOKA BAR
-                  </span>
-                  <span class="timeline-link" aria-disabled="true">Sem ingressos</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <div class="timeline-head">
-                  <h3>BAILÃO DO FIKA</h3>
-                  <span class="timeline-date">28/03</span>
-                </div>
-                <div class="timeline-foot">
-                  <span class="timeline-location">
-                    <span
-                      class="material-symbols-outlined"
-                      aria-hidden="true"
-                    >
-                      location_on
-                    </span>
-                    FIKA BAR
-                  </span>
-                  <span class="timeline-link" aria-disabled="true">Sem ingressos</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a
-            id="linkFullAgenda"
+          <button
+            id="toggleAgendaBtn"
             class="button button-outline"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
+            type="button"
           >
             Ver agenda completa
-          </a>
+          </button>
         </div>
       </section>
 
       <section id="musica" class="section section-tracks">
         <div class="section-header-row">
           <div>
-            <h2 class="section-title">MÚSICAS</h2>
+            <h2 id="musicasTitle" class="section-title">MÚSICAS</h2>
             <p class="section-subtitle">Destaques</p>
           </div>
           <span class="tag">Destaques</span>
@@ -335,117 +227,12 @@
         <div class="music-groups">
           <div class="music-group">
             <p class="section-subtitle">Músicas</p>
-            <div class="track-list">
-              <article class="track" data-link="musica1" data-youtube="musica1" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Explode Técnico de Som" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Explode Técnico de Som</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica2" data-youtube="musica2" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Tropa do 100 Carinho" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Tropa do 100 Carinho</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica3" data-youtube="musica3" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Trava por Cima do Pau" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Trava por Cima do Pau</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica4" data-youtube="musica4" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Fika de 4 pra Tropa" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Fika de 4 pra Tropa</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica5" data-youtube="musica5" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Bolha e Rock" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Bolha e Rock</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica6" data-youtube="musica6" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Mandelão" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Mandelão</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica7" data-youtube="musica7" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Tá de Baixo da Calcinha" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Tá de Baixo da Calcinha</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="musica8" data-youtube="musica8" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa da música Vai Piranha no Pau" />
-                  <div class="track-overlay"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></div>
-                </div>
-                <div class="track-info"><h3>Vai Piranha no Pau</h3><p>Música</p></div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-            </div>
+            <div id="musicasList" class="track-list"></div>
           </div>
 
           <div class="music-group">
             <p class="section-subtitle">Álbuns</p>
-            <div class="track-list">
-              <article class="track" data-link="album1" data-youtube="album1" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa do álbum O Mais Brabo da Putaria" />
-                  <div class="track-overlay">
-                    <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-                  </div>
-                </div>
-                <div class="track-info">
-                  <h3>O Mais Brabo da Putaria</h3>
-                  <p>Álbum</p>
-                </div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="album2" data-youtube="album2" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa do álbum Sessão de Grave" />
-                  <div class="track-overlay">
-                    <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-                  </div>
-                </div>
-                <div class="track-info">
-                  <h3>Sessão de Grave</h3>
-                  <p>Álbum</p>
-                </div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-              <article class="track" data-link="album3" data-youtube="album3" tabindex="0" role="button">
-                <div class="track-thumb">
-                  <img src="pics/pellegrine_logo.jpeg" data-fallback-src="pics/pellegrine_logo.jpeg" alt="Capa do álbum Duas Faces do Mandelão" />
-                  <div class="track-overlay">
-                    <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
-                  </div>
-                </div>
-                <div class="track-info">
-                  <h3>Duas Faces do Mandelão</h3>
-                  <p>Álbum</p>
-                </div>
-                <span class="track-action"><span class="material-symbols-outlined" aria-hidden="true">play_arrow</span></span>
-              </article>
-            </div>
+            <div id="albunsList" class="track-list"></div>
           </div>
         </div>
       </section>

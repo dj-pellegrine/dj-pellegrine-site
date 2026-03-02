@@ -1,74 +1,519 @@
-const LINKS = {
-  booking: "#",
-  contact: "https://wa.me/qr/FJO37YAQYRELN1",
-  listenSets: "#",
-  fullAgenda: "#",
-  viewAllSets: "https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB",
-  instagram: "https://www.instagram.com/djpellegrine?igsh=MWpxaGo1N2UyYTk3MQ==",
-  spotify: "https://open.spotify.com/artist/5YRuZbhTIox6qO4EpQraWM?si=W7euD44dQY-bg05yNUE2zA",
-  youtube: "https://youtube.com/@djpellegrine?si=KGBt3YOiprZ3rdY5",
-  mediaKit: "https://drive.google.com/drive/folders/1-zR6fXtp0LHKSF4hG47Sb6MN-mBJzjxo",
-  set1: "https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB",
-  set2: "https://youtu.be/aJPHglItl08?si=6hfIk8Bm7Oqih9L4",
-  set3: "#",
-  albuns: [
-    "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
-    "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn",
-    "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY",
+const FALLBACK_THUMBNAIL = "pics/pellegrine_logo.jpeg";
+
+const DEFAULT_SITE_CONTENT = {
+  heroButtons: {
+    contato: {
+      label: "Contato",
+      url: "https://wa.me/qr/FJO37YAQYRELN1",
+    },
+    midiaKit: {
+      label: "Mídia Kit",
+      url: "https://drive.google.com/drive/folders/1-zR6fXtp0LHKSF4hG47Sb6MN-mBJzjxo",
+    },
+  },
+  stats: [
+    { label: "Público", value: "50k+" },
+    { label: "Shows", value: "100+" },
+    { label: "Streams", value: "230k+" },
   ],
-  musicas: [
-    "https://youtube.com/playlist?list=OLAK5uy_mvcMyxCATVyAJVJgiAxv3EfCuDzXMQNtE&si=jjwOOI_hu25KGv_G",
-    "https://youtube.com/playlist?list=OLAK5uy_kq-DcP3okZDiDJ44nnTWSkw67-0uNGtos&si=znGXEKRtyhCe9yOL",
-    "https://youtube.com/playlist?list=OLAK5uy_mHpqldpC5gKA83SWmiW2OC7ZWqaaLJwnE&si=CT5sR1iOIMLvBH7u",
-    "https://youtube.com/playlist?list=OLAK5uy_krXjVzN5fwkxPiGfbIMaww6rfq1w3QOHM&si=H-I_5Dpsd2Ic5cgh",
-    "https://youtube.com/playlist?list=OLAK5uy_mM7JlU_70fq2acvdgw9iZseuwwnyZWk7s&si=e3OLeFE05eYBALa1",
-    "https://youtube.com/playlist?list=OLAK5uy_l7ILCs274uHn5hjbnfYMoebANps4Nsao8&si=6M3R8mKC8cTAy7CN",
-    "https://youtube.com/playlist?list=OLAK5uy_kXmyjPsgAAvPJ_aEAuXFCIu2kOeBNgPwU&si=KkJQ9TPbWV4YjGbz",
-    "https://youtube.com/playlist?list=OLAK5uy_kBn4CNbkE1hUYpPLYvLxvqcEHItA_WbTE&si=qle3Aok9Vec0pM3o",
-  ],
-  album1:
-    "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
-  album2:
-    "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn",
-  album3:
-    "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY",
-  musica1:
-    "https://youtube.com/playlist?list=OLAK5uy_mvcMyxCATVyAJVJgiAxv3EfCuDzXMQNtE&si=jjwOOI_hu25KGv_G",
-  musica2:
-    "https://youtube.com/playlist?list=OLAK5uy_kq-DcP3okZDiDJ44nnTWSkw67-0uNGtos&si=znGXEKRtyhCe9yOL",
-  musica3:
-    "https://youtube.com/playlist?list=OLAK5uy_mHpqldpC5gKA83SWmiW2OC7ZWqaaLJwnE&si=CT5sR1iOIMLvBH7u",
-  musica4:
-    "https://youtube.com/playlist?list=OLAK5uy_krXjVzN5fwkxPiGfbIMaww6rfq1w3QOHM&si=H-I_5Dpsd2Ic5cgh",
-  musica5:
-    "https://youtube.com/playlist?list=OLAK5uy_mM7JlU_70fq2acvdgw9iZseuwwnyZWk7s&si=e3OLeFE05eYBALa1",
-  musica6:
-    "https://youtube.com/playlist?list=OLAK5uy_l7ILCs274uHn5hjbnfYMoebANps4Nsao8&si=6M3R8mKC8cTAy7CN",
-  musica7:
-    "https://youtube.com/playlist?list=OLAK5uy_kXmyjPsgAAvPJ_aEAuXFCIu2kOeBNgPwU&si=KkJQ9TPbWV4YjGbz",
-  musica8:
-    "https://youtube.com/playlist?list=OLAK5uy_kBn4CNbkE1hUYpPLYvLxvqcEHItA_WbTE&si=qle3Aok9Vec0pM3o",
+  sessions: {
+    title: "SESSIONS",
+    items: [
+      {
+        title: "Live Set - DJ Pellegrine Funk Sub Mundo",
+        subtitle: "Gravado em São Paulo",
+        url: "https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB",
+      },
+      {
+        title: "Set - Doca Session Funk Sub Mundo",
+        subtitle: "Sessão Exclusiva",
+        url: "https://youtu.be/aJPHglItl08?si=6hfIk8Bm7Oqih9L4",
+      },
+    ],
+  },
+  agenda: {
+    title: "AGENDA",
+    events: [
+      { name: "FESTIVAL FUNK", place: "DOKA BAR", date: "21/03" },
+      { name: "CALOURADA UNIMAX", place: "DOKA BAR", date: "27/03" },
+      { name: "BAILÃO DO FIKA", place: "FIKA BAR", date: "28/03" },
+    ],
+  },
+  musicasSection: {
+    title: "MÚSICAS",
+    items: [
+      {
+        type: "album",
+        title: "O Mais Brabo da Putaria",
+        url: "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
+      },
+      {
+        type: "album",
+        title: "Sessão de Grave",
+        url: "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn",
+      },
+      {
+        type: "album",
+        title: "Duas Faces do Mandelão",
+        url: "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY",
+      },
+      {
+        type: "musica",
+        title: "Explode Técnico de Som",
+        url: "https://youtube.com/playlist?list=OLAK5uy_mvcMyxCATVyAJVJgiAxv3EfCuDzXMQNtE&si=jjwOOI_hu25KGv_G",
+      },
+      {
+        type: "musica",
+        title: "Tropa do 100 Carinho",
+        url: "https://youtube.com/playlist?list=OLAK5uy_kq-DcP3okZDiDJ44nnTWSkw67-0uNGtos&si=znGXEKRtyhCe9yOL",
+      },
+      {
+        type: "musica",
+        title: "Trava por Cima do Pau",
+        url: "https://youtube.com/playlist?list=OLAK5uy_mHpqldpC5gKA83SWmiW2OC7ZWqaaLJwnE&si=CT5sR1iOIMLvBH7u",
+      },
+      {
+        type: "musica",
+        title: "Fika de 4 pra Tropa",
+        url: "https://youtube.com/playlist?list=OLAK5uy_krXjVzN5fwkxPiGfbIMaww6rfq1w3QOHM&si=H-I_5Dpsd2Ic5cgh",
+      },
+      {
+        type: "musica",
+        title: "Bolha e Rock",
+        url: "https://youtube.com/playlist?list=OLAK5uy_mM7JlU_70fq2acvdgw9iZseuwwnyZWk7s&si=e3OLeFE05eYBALa1",
+      },
+      {
+        type: "musica",
+        title: "Mandelão",
+        url: "https://youtube.com/playlist?list=OLAK5uy_l7ILCs274uHn5hjbnfYMoebANps4Nsao8&si=6M3R8mKC8cTAy7CN",
+      },
+      {
+        type: "musica",
+        title: "Tá de Baixo da Calcinha",
+        url: "https://youtube.com/playlist?list=OLAK5uy_kXmyjPsgAAvPJ_aEAuXFCIu2kOeBNgPwU&si=KkJQ9TPbWV4YjGbz",
+      },
+      {
+        type: "musica",
+        title: "Vai Piranha no Pau",
+        url: "https://youtube.com/playlist?list=OLAK5uy_kBn4CNbkE1hUYpPLYvLxvqcEHItA_WbTE&si=qle3Aok9Vec0pM3o",
+      },
+    ],
+  },
+  socials: {
+    instagram:
+      "https://www.instagram.com/djpellegrine?igsh=MWpxaGo1N2UyYTk3MQ==",
+    spotify:
+      "https://open.spotify.com/artist/5YRuZbhTIox6qO4EpQraWM?si=W7euD44dQY-bg05yNUE2zA",
+    youtube: "https://youtube.com/@djpellegrine?si=KGBt3YOiprZ3rdY5",
+  },
 };
 
-const linkMap = [
-  { id: "linkListenSets", key: "contact" },
-  { id: "linkFullAgenda", key: "fullAgenda" },
-  { id: "linkMediaKit", key: "mediaKit" },
-  { id: "linkInstagram", key: "instagram" },
-  { id: "linkSpotify", key: "spotify" },
-  { id: "linkYouTube", key: "youtube" },
-];
+const deepClone = (value) => JSON.parse(JSON.stringify(value));
 
-linkMap.forEach(({ id, key }) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const href = LINKS[key] ?? "#";
-  el.setAttribute("href", href);
-  if (href !== "#" && !href.startsWith("#")) {
-    el.setAttribute("target", "_blank");
-    el.setAttribute("rel", "noopener noreferrer");
+const loadSiteContent = async () => {
+  try {
+    const response = await fetch("data/site-content.json");
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const remoteContent = await response.json();
+    return {
+      ...deepClone(DEFAULT_SITE_CONTENT),
+      ...remoteContent,
+      heroButtons: {
+        ...deepClone(DEFAULT_SITE_CONTENT.heroButtons),
+        ...(remoteContent.heroButtons || {}),
+      },
+      sessions: {
+        ...deepClone(DEFAULT_SITE_CONTENT.sessions),
+        ...(remoteContent.sessions || {}),
+      },
+      agenda: {
+        ...deepClone(DEFAULT_SITE_CONTENT.agenda),
+        ...(remoteContent.agenda || {}),
+      },
+      musicasSection: {
+        ...deepClone(DEFAULT_SITE_CONTENT.musicasSection),
+        ...(remoteContent.musicasSection || {}),
+      },
+      socials: {
+        ...deepClone(DEFAULT_SITE_CONTENT.socials),
+        ...(remoteContent.socials || {}),
+      },
+    };
+  } catch (error) {
+    console.warn("Não foi possível carregar data/site-content.json. Usando fallback local.", error);
+    return deepClone(DEFAULT_SITE_CONTENT);
   }
-});
+};
+
+const setExternalLink = (element, url) => {
+  if (!element) return;
+  const normalizedUrl = typeof url === "string" ? url.trim() : "";
+
+  if (!normalizedUrl || normalizedUrl === "#") {
+    element.setAttribute("href", "#");
+    element.removeAttribute("target");
+    element.removeAttribute("rel");
+    return;
+  }
+
+  element.setAttribute("href", normalizedUrl);
+  element.setAttribute("target", "_blank");
+  element.setAttribute("rel", "noopener noreferrer");
+};
+
+const setButtonLabel = (button, label) => {
+  if (!button || !label) return;
+  const labelEl = button.querySelector(".button-label");
+  if (labelEl) {
+    labelEl.textContent = label;
+    return;
+  }
+
+  const icon = button.querySelector(".material-symbols-outlined");
+  if (!icon) {
+    button.textContent = label;
+    return;
+  }
+
+  while (icon.nextSibling) {
+    icon.nextSibling.remove();
+  }
+  button.append(document.createTextNode(` ${label}`));
+};
+
+const setText = (selectorOrEl, value) => {
+  if (!value) return;
+  const element =
+    typeof selectorOrEl === "string"
+      ? document.querySelector(selectorOrEl)
+      : selectorOrEl;
+  if (element) {
+    element.textContent = value;
+  }
+};
+
+const extractYouTubeId = (url) => {
+  if (!url) return null;
+  try {
+    const parsed = new URL(url);
+
+    if (parsed.hostname.includes("youtu.be")) {
+      const path = parsed.pathname.replace(/^\//, "").split("/")[0];
+      return path || null;
+    }
+
+    if (parsed.searchParams.has("v")) {
+      return parsed.searchParams.get("v");
+    }
+
+    const pathMatch = parsed.pathname.match(/\/shorts\/([^/?#]+)/);
+    if (pathMatch) {
+      return pathMatch[1];
+    }
+  } catch (error) {
+    return null;
+  }
+
+  return null;
+};
+
+const buildYouTubeThumbnailCandidates = (url) => {
+  if (!url || url === "#") return [];
+  const videoId = extractYouTubeId(url);
+  if (!videoId) {
+    return [];
+  }
+
+  return [
+    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+  ];
+};
+
+const applyThumbnail = (img, url, thumbnail) => {
+  if (!img) return;
+
+  const candidates = [];
+  if (thumbnail && typeof thumbnail === "string" && thumbnail.trim()) {
+    candidates.push(thumbnail.trim());
+  } else {
+    candidates.push(...buildYouTubeThumbnailCandidates(url));
+  }
+  candidates.push(FALLBACK_THUMBNAIL);
+
+  let index = 0;
+  img.onerror = () => {
+    index += 1;
+    if (index < candidates.length) {
+      img.src = candidates[index];
+      return;
+    }
+    img.onerror = null;
+  };
+
+  img.src = candidates[index];
+};
+
+const createIcon = (name) => {
+  const icon = document.createElement("span");
+  icon.className = "material-symbols-outlined";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = name;
+  return icon;
+};
+
+const renderStats = (stats) => {
+  const statsList = document.getElementById("statsList");
+  if (!statsList) return;
+
+  statsList.textContent = "";
+  (Array.isArray(stats) ? stats : []).forEach((item) => {
+    const stat = document.createElement("div");
+    stat.className = "stat";
+
+    const value = document.createElement("span");
+    value.className = "stat-value";
+    value.textContent = item?.value || "-";
+
+    const label = document.createElement("span");
+    label.className = "stat-label";
+    label.textContent = item?.label || "-";
+
+    stat.append(value, label);
+    statsList.append(stat);
+  });
+};
+
+const createSetCard = (item) => {
+  const article = document.createElement("article");
+  article.className = "set-card";
+  article.tabIndex = 0;
+  article.setAttribute("role", "button");
+  article.setAttribute("data-link", item.url || "#");
+  article.setAttribute("data-youtube", item.url || "#");
+
+  const thumb = document.createElement("div");
+  thumb.className = "set-thumb";
+
+  const img = document.createElement("img");
+  img.alt = item.title || "Sessão";
+  applyThumbnail(img, item.url, item.thumbnail);
+
+  const overlay = document.createElement("div");
+  overlay.className = "set-overlay";
+
+  const play = document.createElement("div");
+  play.className = "set-play";
+  play.append(createIcon("play_arrow"));
+
+  thumb.append(img, overlay, play);
+
+  const title = document.createElement("h3");
+  title.className = "set-title";
+  title.textContent = item.title || "Session";
+
+  const meta = document.createElement("p");
+  meta.className = "set-meta";
+  meta.textContent = item.subtitle || "";
+
+  article.append(thumb, title, meta);
+  return article;
+};
+
+const renderSessions = (sessions) => {
+  setText("#sessionsTitle", sessions?.title || "SESSIONS");
+
+  const list = document.getElementById("sessionsList");
+  if (!list) return;
+
+  list.textContent = "";
+  (Array.isArray(sessions?.items) ? sessions.items : []).forEach((item) => {
+    list.append(createSetCard(item));
+  });
+};
+
+const createAgendaItem = (event) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "timeline-item agenda-item";
+
+  const dot = document.createElement("div");
+  dot.className = "timeline-dot";
+
+  const content = document.createElement("div");
+  content.className = "timeline-content";
+
+  const head = document.createElement("div");
+  head.className = "timeline-head";
+
+  const title = document.createElement("h3");
+  title.textContent = event.name || "Evento";
+
+  const date = document.createElement("span");
+  date.className = "timeline-date";
+  date.textContent = event.date || "--/--";
+
+  head.append(title, date);
+
+  const foot = document.createElement("div");
+  foot.className = "timeline-foot";
+
+  const location = document.createElement("span");
+  location.className = "timeline-location";
+  location.append(createIcon("location_on"), document.createTextNode(` ${event.place || "Local"}`));
+
+  foot.append(location);
+
+  if (event.url && event.url !== "#") {
+    const link = document.createElement("a");
+    link.className = "timeline-link";
+    link.textContent = "Ingressos";
+    setExternalLink(link, event.url);
+    foot.append(link);
+  }
+
+  content.append(head, foot);
+  wrapper.append(dot, content);
+
+  return wrapper;
+};
+
+const setupAgendaToggle = () => {
+  const agendaSection = document.getElementById("agenda");
+  const agendaList = document.getElementById("agendaList");
+  const toggleAgendaBtn = document.getElementById("toggleAgendaBtn");
+
+  if (!agendaSection || !agendaList || !toggleAgendaBtn) return;
+
+  const agendaItems = Array.from(agendaList.querySelectorAll(".agenda-item"));
+  const hasExtraItems = agendaItems.length > 3;
+
+  toggleAgendaBtn.classList.remove("is-disabled");
+  toggleAgendaBtn.removeAttribute("aria-disabled");
+  toggleAgendaBtn.disabled = false;
+  toggleAgendaBtn.onclick = null;
+
+  if (!hasExtraItems) {
+    agendaSection.classList.remove("agenda-collapsed");
+    toggleAgendaBtn.textContent = "Sem mais datas";
+    toggleAgendaBtn.classList.add("is-disabled");
+    toggleAgendaBtn.setAttribute("aria-disabled", "true");
+    toggleAgendaBtn.disabled = true;
+    return;
+  }
+
+  agendaSection.classList.add("agenda-collapsed");
+  toggleAgendaBtn.textContent = "Ver agenda completa";
+
+  toggleAgendaBtn.onclick = () => {
+    const isCollapsed = agendaSection.classList.toggle("agenda-collapsed");
+    toggleAgendaBtn.textContent = isCollapsed ? "Ver agenda completa" : "Ver menos";
+
+    if (isCollapsed) {
+      agendaSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+};
+
+const renderAgenda = (agenda) => {
+  setText("#agendaTitle", agenda?.title || "AGENDA");
+
+  const list = document.getElementById("agendaList");
+  if (!list) return;
+
+  list.textContent = "";
+  (Array.isArray(agenda?.events) ? agenda.events : []).forEach((event) => {
+    list.append(createAgendaItem(event));
+  });
+
+  setupAgendaToggle();
+};
+
+const createTrackItem = (item) => {
+  const article = document.createElement("article");
+  article.className = "track";
+  article.tabIndex = 0;
+  article.setAttribute("role", "button");
+  article.setAttribute("data-link", item.url || "#");
+  article.setAttribute("data-youtube", item.url || "#");
+
+  const thumb = document.createElement("div");
+  thumb.className = "track-thumb";
+
+  const img = document.createElement("img");
+  img.alt = `Capa de ${item.title || "item"}`;
+  applyThumbnail(img, item.url, item.thumbnail);
+
+  const overlay = document.createElement("div");
+  overlay.className = "track-overlay";
+  overlay.append(createIcon("play_arrow"));
+
+  thumb.append(img, overlay);
+
+  const info = document.createElement("div");
+  info.className = "track-info";
+
+  const title = document.createElement("h3");
+  title.textContent = item.title || "Titulo";
+
+  const typeLabel = document.createElement("p");
+  typeLabel.textContent = item.type === "album" ? "Álbum" : "Música";
+
+  info.append(title, typeLabel);
+
+  const action = document.createElement("span");
+  action.className = "track-action";
+  action.append(createIcon("play_arrow"));
+
+  article.append(thumb, info, action);
+  return article;
+};
+
+const renderMusicas = (musicasSection) => {
+  setText("#musicasTitle", musicasSection?.title || "MÚSICAS");
+
+  const albunsList = document.getElementById("albunsList");
+  const musicasList = document.getElementById("musicasList");
+  if (!albunsList || !musicasList) return;
+
+  albunsList.textContent = "";
+  musicasList.textContent = "";
+
+  const items = Array.isArray(musicasSection?.items) ? musicasSection.items : [];
+  const albuns = items.filter((item) => (item?.type || "").toLowerCase() === "album");
+  const musicas = items.filter((item) => (item?.type || "").toLowerCase() === "musica");
+
+  albuns.forEach((item) => albunsList.append(createTrackItem(item)));
+  musicas.forEach((item) => musicasList.append(createTrackItem(item)));
+};
+
+const applyLinksToHeroAndSocial = (content) => {
+  const contato = content?.heroButtons?.contato || {};
+  const midiaKit = content?.heroButtons?.midiaKit || {};
+
+  const linkListenSets = document.getElementById("linkListenSets");
+  const linkMediaKit = document.getElementById("linkMediaKit");
+
+  setExternalLink(linkListenSets, contato.url || "#");
+  setButtonLabel(linkListenSets, contato.label || "Contato");
+
+  setExternalLink(linkMediaKit, midiaKit.url || "#");
+  setButtonLabel(linkMediaKit, midiaKit.label || "Mídia Kit");
+
+  setExternalLink(document.getElementById("linkInstagram"), content?.socials?.instagram || "#");
+  setExternalLink(document.getElementById("linkSpotify"), content?.socials?.spotify || "#");
+  setExternalLink(document.getElementById("linkYouTube"), content?.socials?.youtube || "#");
+};
+
+const initializeSiteContent = async () => {
+  const content = await loadSiteContent();
+  applyLinksToHeroAndSocial(content);
+  renderStats(content.stats);
+  renderSessions(content.sessions);
+  renderAgenda(content.agenda);
+  renderMusicas(content.musicasSection);
+};
 
 const yearEl = document.getElementById("year");
 if (yearEl) {
@@ -116,101 +561,31 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const resolveLink = (value) => {
-  if (!value || value === "#") return "#";
-  if (LINKS[value]) return LINKS[value];
-  return value;
-};
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
 
-const extractYouTubeId = (url) => {
-  if (!url) return null;
-  try {
-    const parsed = new URL(url);
-    if (parsed.hostname.includes("youtu.be")) {
-      return parsed.pathname.replace("/", "");
-    }
-    if (parsed.searchParams.has("v")) {
-      return parsed.searchParams.get("v");
-    }
-  } catch (error) {
-    return null;
-  }
-  return null;
-};
+  const clickable = target.closest("[data-link]");
+  if (!clickable || !(clickable instanceof HTMLElement)) return;
 
-const buildYouTubeThumbnailCandidates = (url) => {
-  if (!url || url === "#") return [];
-  const videoId = extractYouTubeId(url);
-  if (!videoId) {
-    // Playlist-only URLs (no video ID) cannot reliably provide thumbnails without API.
-    return [];
-  }
-  return [
-    `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-    `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-  ];
-};
-
-const getSafeFallbackSrc = (img) => {
-  const explicit = img.getAttribute("data-fallback-src");
-  if (explicit) return explicit;
-
-  const current = img.getAttribute("src") || "";
-  const isPlaceholder =
-    !current ||
-    current.startsWith("data:") ||
-    current.includes("placeholder") ||
-    current.includes("dummy") ||
-    current.includes("icon");
-
-  if (isPlaceholder) return "pics/pellegrine_logo.jpeg";
-  return current;
-};
-
-const applyYouTubeThumbnail = (img, url, fallbackSrc) => {
-  const candidates = buildYouTubeThumbnailCandidates(url);
-  if (!img) return;
-  if (candidates.length === 0) {
-    if (fallbackSrc) img.src = fallbackSrc;
-    return;
-  }
-  let index = 0;
-  img.onerror = () => {
-    index += 1;
-    if (index < candidates.length) {
-      img.src = candidates[index];
-      return;
-    }
-    if (fallbackSrc) {
-      img.src = fallbackSrc;
-    }
-    img.onerror = null;
-  };
-  img.src = candidates[index];
-};
-
-document.querySelectorAll("[data-youtube]").forEach((card) => {
-  const rawValue = card.getAttribute("data-youtube");
-  const resolved = resolveLink(rawValue);
-  const img = card.querySelector("img");
-  if (!img) return;
-  const fallbackSrc = getSafeFallbackSrc(img);
-  applyYouTubeThumbnail(img, resolved, fallbackSrc);
-});
-
-document.querySelectorAll("[data-link]").forEach((el) => {
-  const rawValue = el.getAttribute("data-link");
-  const url = resolveLink(rawValue);
+  const url = clickable.dataset.link;
   if (!url || url === "#") return;
 
-  const open = () => window.open(url, "_blank", "noopener,noreferrer");
-  el.addEventListener("click", open);
-  el.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      open();
-    }
-  });
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+
+  const target = event.target;
+  if (!(target instanceof HTMLElement)) return;
+  if (!target.matches("[data-link]")) return;
+
+  const url = target.dataset.link;
+  if (!url || url === "#") return;
+
+  event.preventDefault();
+  window.open(url, "_blank", "noopener,noreferrer");
 });
 
 const sectionIds = ["home", "sobre", "liveset", "agenda", "musica"];
@@ -236,11 +611,13 @@ if (sections.length) {
   const updateActiveFromScroll = () => {
     const offsetY = window.scrollY + navHeight + 24;
     let activeId = sections[0]?.id;
+
     sections.forEach((section) => {
       if (section.offsetTop <= offsetY) {
         activeId = section.id;
       }
     });
+
     if (activeId) setActiveLink(activeId);
   };
 
@@ -259,12 +636,18 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const href = link.getAttribute("href");
     if (!href || href === "#") return;
+
     const target = document.querySelector(href);
     if (!target) return;
+
     event.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
+
     const clickedId = href.replace("#", "");
     if (clickedId) setActiveLink(clickedId);
+
     closeMenu();
   });
 });
+
+initializeSiteContent();

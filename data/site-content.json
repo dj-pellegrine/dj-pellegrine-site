@@ -1,0 +1,126 @@
+{
+  "heroButtons": {
+    "contato": {
+      "label": "Contato",
+      "url": "https://wa.me/qr/FJO37YAQYRELN1"
+    },
+    "midiaKit": {
+      "label": "Mídia Kit",
+      "url": "https://drive.google.com/drive/folders/1-zR6fXtp0LHKSF4hG47Sb6MN-mBJzjxo"
+    }
+  },
+  "stats": [
+    {
+      "label": "Público",
+      "value": "50k+"
+    },
+    {
+      "label": "Shows",
+      "value": "100+"
+    },
+    {
+      "label": "Streams",
+      "value": "230k+"
+    }
+  ],
+  "sessions": {
+    "title": "SESSIONS",
+    "items": [
+      {
+        "title": "Live Set - DJ Pellegrine Funk Sub Mundo",
+        "subtitle": "Gravado em São Paulo",
+        "url": "https://youtu.be/lh19orJjJo0?si=ZV8aCDr-DFvt4moB"
+      },
+      {
+        "title": "Set - Doca Session Funk Sub Mundo",
+        "subtitle": "Sessão Exclusiva",
+        "url": "https://youtu.be/aJPHglItl08?si=6hfIk8Bm7Oqih9L4"
+      }
+    ]
+  },
+  "agenda": {
+    "title": "AGENDA",
+    "events": [
+      {
+        "name": "FESTIVAL FUNK",
+        "place": "DOKA BAR",
+        "date": "21/03"
+      },
+      {
+        "name": "CALOURADA UNIMAX",
+        "place": "DOKA BAR",
+        "date": "27/03"
+      },
+      {
+        "name": "BAILÃO DO FIKA",
+        "place": "FIKA BAR",
+        "date": "28/03"
+      }
+    ]
+  },
+  "musicasSection": {
+    "title": "MÚSICAS",
+    "items": [
+      {
+        "type": "album",
+        "title": "O Mais Brabo da Putaria",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v"
+      },
+      {
+        "type": "album",
+        "title": "Sessão de Grave",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn"
+      },
+      {
+        "type": "album",
+        "title": "Duas Faces do Mandelão",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY"
+      },
+      {
+        "type": "musica",
+        "title": "Explode Técnico de Som",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_mvcMyxCATVyAJVJgiAxv3EfCuDzXMQNtE&si=jjwOOI_hu25KGv_G"
+      },
+      {
+        "type": "musica",
+        "title": "Tropa do 100 Carinho",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_kq-DcP3okZDiDJ44nnTWSkw67-0uNGtos&si=znGXEKRtyhCe9yOL"
+      },
+      {
+        "type": "musica",
+        "title": "Trava por Cima do Pau",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_mHpqldpC5gKA83SWmiW2OC7ZWqaaLJwnE&si=CT5sR1iOIMLvBH7u"
+      },
+      {
+        "type": "musica",
+        "title": "Fika de 4 pra Tropa",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_krXjVzN5fwkxPiGfbIMaww6rfq1w3QOHM&si=H-I_5Dpsd2Ic5cgh"
+      },
+      {
+        "type": "musica",
+        "title": "Bolha e Rock",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_mM7JlU_70fq2acvdgw9iZseuwwnyZWk7s&si=e3OLeFE05eYBALa1"
+      },
+      {
+        "type": "musica",
+        "title": "Mandelão",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_l7ILCs274uHn5hjbnfYMoebANps4Nsao8&si=6M3R8mKC8cTAy7CN"
+      },
+      {
+        "type": "musica",
+        "title": "Tá de Baixo da Calcinha",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_kXmyjPsgAAvPJ_aEAuXFCIu2kOeBNgPwU&si=KkJQ9TPbWV4YjGbz"
+      },
+      {
+        "type": "musica",
+        "title": "Vai Piranha no Pau",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_kBn4CNbkE1hUYpPLYvLxvqcEHItA_WbTE&si=qle3Aok9Vec0pM3o"
+      }
+    ]
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/djpellegrine?igsh=MWpxaGo1N2UyYTk3MQ==",
+    "spotify": "https://open.spotify.com/artist/5YRuZbhTIox6qO4EpQraWM?si=W7euD44dQY-bg05yNUE2zA",
+    "youtube": "https://youtube.com/@djpellegrine?si=KGBt3YOiprZ3rdY5"
+  }
+}
