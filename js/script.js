@@ -286,7 +286,8 @@ const renderStats = (stats) => {
   });
 };
 
-const createSetCard = (item) => {
+const createSetCard = (rawItem) => {
+  const item = rawItem && typeof rawItem === "object" ? rawItem : {};
   const article = document.createElement("article");
   article.className = "set-card";
   article.tabIndex = 0;
@@ -329,12 +330,14 @@ const renderSessions = (sessions) => {
   if (!list) return;
 
   list.textContent = "";
-  (Array.isArray(sessions?.items) ? sessions.items : []).forEach((item) => {
+  const items = Array.isArray(sessions?.items) ? sessions.items : [];
+  items.forEach((item) => {
     list.append(createSetCard(item));
   });
 };
 
-const createAgendaItem = (event) => {
+const createAgendaItem = (rawEvent) => {
+  const event = rawEvent && typeof rawEvent === "object" ? rawEvent : {};
   const wrapper = document.createElement("div");
   wrapper.className = "timeline-item agenda-item";
 
@@ -430,7 +433,8 @@ const renderAgenda = (agenda) => {
   setupAgendaToggle();
 };
 
-const createTrackItem = (item) => {
+const createTrackItem = (rawItem) => {
+  const item = rawItem && typeof rawItem === "object" ? rawItem : {};
   const article = document.createElement("article");
   article.className = "track";
   article.tabIndex = 0;
@@ -481,8 +485,9 @@ const renderMusicas = (musicasSection) => {
   musicasList.textContent = "";
 
   const items = Array.isArray(musicasSection?.items) ? musicasSection.items : [];
-  const albuns = items.filter((item) => (item?.type || "").toLowerCase() === "album");
-  const musicas = items.filter((item) => (item?.type || "").toLowerCase() === "musica");
+  const safeItems = items.filter((item) => item && typeof item === "object");
+  const albuns = safeItems.filter((item) => (item.type || "").toLowerCase() === "album");
+  const musicas = safeItems.filter((item) => (item.type || "").toLowerCase() === "musica");
 
   albuns.forEach((item) => albunsList.append(createTrackItem(item)));
   musicas.forEach((item) => musicasList.append(createTrackItem(item)));
@@ -508,11 +513,30 @@ const applyLinksToHeroAndSocial = (content) => {
 
 const initializeSiteContent = async () => {
   const content = await loadSiteContent();
-  applyLinksToHeroAndSocial(content);
-  renderStats(content.stats);
-  renderSessions(content.sessions);
-  renderAgenda(content.agenda);
-  renderMusicas(content.musicasSection);
+  try {
+    applyLinksToHeroAndSocial(content);
+    renderStats(content.stats);
+  } catch (error) {
+    console.error("Erro ao renderizar links/estatisticas.", error);
+  }
+
+  try {
+    renderSessions(content.sessions);
+  } catch (error) {
+    console.error("Erro ao renderizar sessoes.", error);
+  }
+
+  try {
+    renderAgenda(content.agenda);
+  } catch (error) {
+    console.error("Erro ao renderizar agenda.", error);
+  }
+
+  try {
+    renderMusicas(content.musicasSection);
+  } catch (error) {
+    console.error("Erro ao renderizar musicas.", error);
+  }
 };
 
 const yearEl = document.getElementById("year");
