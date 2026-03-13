@@ -117,7 +117,7 @@ const loadSiteContent = async () => {
       throw new Error(`HTTP ${response.status}`);
     }
     const remoteContent = await response.json();
-    return {
+    const mergedContent = {
       ...deepClone(DEFAULT_SITE_CONTENT),
       ...remoteContent,
       heroButtons: {
@@ -141,8 +141,10 @@ const loadSiteContent = async () => {
         ...(remoteContent.socials || {}),
       },
     };
+    console.log("[content] loaded JSON OK", mergedContent);
+    return mergedContent;
   } catch (error) {
-    console.warn("Não foi possível carregar data/site-content.json. Usando fallback local.", error);
+    console.warn("[content] JSON load failed, using fallback", error);
     return deepClone(DEFAULT_SITE_CONTENT);
   }
 };
