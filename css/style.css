@@ -275,7 +275,7 @@ button {
 }
 
 #sobre {
-  margin-top: -72px;
+  margin-top: -36px;
 }
 
 .button {
@@ -864,6 +864,10 @@ button {
 
   .hero-actions {
     flex-direction: row;
+  }
+
+  #sobre {
+    margin-top: -28px;
   }
 
   .scroll-row {
