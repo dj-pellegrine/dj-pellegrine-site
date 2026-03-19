@@ -70,17 +70,19 @@
         "type": "album",
         "title": "O Mais Brabo da Putaria",
         "url": "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
-        "thumbnail":"pics/AlbumOmaisBrabo.jpeg" 
+        "thumbnail":"pics/thumbs/AlbumOmaisBrabo.jpeg" 
       },
       {
         "type": "album",
         "title": "Sessão de Grave",
-        "url": "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn"
+        "url": "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn",
+        "thumbnail":""
       },
       {
         "type": "album",
         "title": "Duas Faces do Mandelão",
-        "url": "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY"
+        "url": "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY",
+        "thumbnail":""
       },
       {
         "type": "musica",
