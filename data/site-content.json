@@ -5,14 +5,14 @@
       "url": "https://wa.me/qr/FJO37YAQYRELN1"
     },
     "midiaKit": {
-      "label": "Mídia",
+      "label": "Mídia Kit",
       "url": "https://drive.google.com/drive/folders/1-zR6fXtp0LHKSF4hG47Sb6MN-mBJzjxo"
     }
   },
   "stats": [
     {
       "label": "Público",
-      "value": "50k+"
+      "value": "20k+"
     },
     {
       "label": "Shows",
@@ -47,8 +47,13 @@
         "date": "21/03"
       },
       {
+        "name": "EMBRIAGA BIXO",
+        "place": "GRAFIA BAR",
+        "date": "27/03"
+      },
+      {
         "name": "CALOURADA UNIMAX",
-        "place": "DOKA BAR",
+        "place": "INDAIATUBA",
         "date": "27/03"
       },
       {
