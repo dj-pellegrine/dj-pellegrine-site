@@ -42,24 +42,24 @@
     "title": "AGENDA",
     "events": [
       {
-        "name": "FESTIVAL FUNK",
+        "name": "ODONTO FESTIVAL",
         "place": "DOKA BAR",
-        "date": "21/03"
+        "date": "10/04"
       },
       {
-        "name": "EMBRIAGA BIXO",
-        "place": "GRAFIA BAR",
-        "date": "27/03"
+        "name": "FLUXO 350",
+        "place": "DOKA BAR",
+        "date": "18/04"
       },
       {
-        "name": "CALOURADA UNIMAX",
-        "place": "INDAIATUBA",
-        "date": "27/03"
+        "name": "FESTA DO PIJAMA",
+        "place": "SPACE PUB",
+        "date": "18/04"
       },
       {
-        "name": "BAILÃO DO FIKA",
-        "place": "FIKA BAR",
-        "date": "28/03"
+        "name": "MANDELÃO",
+        "place": "DOKA BAR ",
+        "date": "30/04"
       }
     ]
   },
