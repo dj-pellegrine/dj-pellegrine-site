@@ -141,10 +141,10 @@ const loadSiteContent = async () => {
         ...(remoteContent.socials || {}),
       },
     };
-    console.log("[content] loaded JSON OK", mergedContent);
+    console.log("[content] JSON loaded");
     return mergedContent;
   } catch (error) {
-    console.warn("[content] JSON load failed, using fallback", error);
+    console.warn("[content] JSON failed; using fallback", error);
     return deepClone(DEFAULT_SITE_CONTENT);
   }
 };
@@ -237,13 +237,14 @@ const buildYouTubeThumbnailCandidates = (url) => {
 const applyThumbnail = (img, url, thumbnail) => {
   if (!img) return;
 
-  const candidates = [];
-  if (thumbnail && typeof thumbnail === "string" && thumbnail.trim()) {
-    candidates.push(thumbnail.trim());
-  } else {
-    candidates.push(...buildYouTubeThumbnailCandidates(url));
-  }
-  candidates.push(FALLBACK_THUMBNAIL);
+  const manualThumbnail =
+    typeof thumbnail === "string" && thumbnail.trim() ? thumbnail.trim() : "";
+  const youtubeCandidates = manualThumbnail
+    ? []
+    : buildYouTubeThumbnailCandidates(url);
+  const candidates = manualThumbnail
+    ? [manualThumbnail, FALLBACK_THUMBNAIL]
+    : [...youtubeCandidates, FALLBACK_THUMBNAIL];
 
   let index = 0;
   img.onerror = () => {
@@ -252,10 +253,12 @@ const applyThumbnail = (img, url, thumbnail) => {
       img.src = candidates[index];
       return;
     }
+
     img.onerror = null;
+    img.src = FALLBACK_THUMBNAIL;
   };
 
-  img.src = candidates[index];
+  img.src = candidates[0] || FALLBACK_THUMBNAIL;
 };
 
 const createIcon = (name) => {

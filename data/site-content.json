@@ -70,74 +70,85 @@
         "type": "album",
         "title": "O Mais Brabo da Putaria",
         "url": "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
-        "thumbnail":"pics/thumbs/AlbumOmaisBrabo.jpeg" 
+        "thumbnail": "pics/thumbs/AlbumOmaisBrabo.jpeg"
       },
       {
         "type": "album",
         "title": "Sessão de Grave",
         "url": "https://youtube.com/playlist?list=OLAK5uy_lnVOrfGLrjMlWwrhmqSoeFUSUfeR9Is3s&si=yC4IxcCMkAvee2Tn",
-        "thumbnail":""
+        "thumbnail": ""
       },
       {
         "type": "album",
         "title": "Duas Faces do Mandelão",
         "url": "https://youtube.com/playlist?list=OLAK5uy_mkFuRHluGZQHS7R9BnAdv6E40Q6Tag2dI&si=yv8-jvHsydWezciY",
-        "thumbnail":""
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Explode Técnico de Som",
-        "url": "https://youtu.be/lwppuVE2ZWk?si=ILIUOcWe5aCcJxPU"
+        "url": "https://youtu.be/lwppuVE2ZWk?si=ILIUOcWe5aCcJxPU",
+        "thumbnail": "pics/pellegrine_logo.jpeg"
       },
       {
         "type": "musica",
         "title": "Magrão In My Mind",
-        "url": "https://www.youtube.com/watch?v=qyK0dkIMVh0"
+        "url": "https://www.youtube.com/watch?v=qyK0dkIMVh0",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Agressivo ela é puta",
-        "url": "https://www.youtube.com/watch?v=qBi5YWFpK04"
+        "url": "https://www.youtube.com/watch?v=qBi5YWFpK04",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Pra Toma Coça de Vara",
-        "url": "https://www.youtube.com/watch?v=ocyvEQQmd5Q"
+        "url": "https://www.youtube.com/watch?v=ocyvEQQmd5Q",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Tropa do 100 Carinho",
-        "url": "https://www.youtube.com/watch?v=SeKG3kY7w7A"
+        "url": "https://www.youtube.com/watch?v=SeKG3kY7w7A",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Trava por Cima do Pau",
-        "url": "https://www.youtube.com/watch?v=Bodsk9RdQd4"
+        "url": "https://www.youtube.com/watch?v=Bodsk9RdQd4",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Fika de 4 pra Tropa",
-        "url": "https://www.youtube.com/watch?v=lpusAgOUj24"
+        "url": "https://www.youtube.com/watch?v=lpusAgOUj24",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Bolha e Rock",
-        "url": "https://www.youtube.com/watch?v=4zp0l409P_A"
+        "url": "https://www.youtube.com/watch?v=4zp0l409P_A",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Mandelão",
-        "url": "https://www.youtube.com/watch?v=B4ShiD4Uveg"
+        "url": "https://www.youtube.com/watch?v=B4ShiD4Uveg",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Tá de Baixo da Calcinha",
-        "url": "https://www.youtube.com/watch?v=b5AT2gRzeFA"
+        "url": "https://www.youtube.com/watch?v=b5AT2gRzeFA",
+        "thumbnail": ""
       },
       {
         "type": "musica",
         "title": "Vai Piranha no Pau",
-        "url": "https://www.youtube.com/watch?v=dsn1tD2XJeQ"
+        "url": "https://www.youtube.com/watch?v=dsn1tD2XJeQ",
+        "thumbnail": ""
       }
     ]
   },
