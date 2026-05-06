@@ -42,24 +42,24 @@
     "title": "AGENDA",
     "events": [
       {
-        "name": "ODONTO FESTIVAL",
+        "name": "MANDELÃO NO DOKA",
         "place": "DOKA BAR",
-        "date": "10/04"
+        "date": "08/05"
+      },
+      {
+        "name": "BAILE NO PORÃO",
+        "place": "DOKA BAR",
+        "date": "16/05"
+      },
+      {
+        "name": "FLUXO 808",
+        "place": "CAMPINAS HALL",
+        "date": "16/05"
       },
       {
         "name": "FLUXO 360",
-        "place": "DOKA BAR",
-        "date": "18/04"
-      },
-      {
-        "name": "FESTA DO PIJAMA",
-        "place": "SPACE PUB",
-        "date": "18/04"
-      },
-      {
-        "name": "MANDELÃO",
         "place": "DOKA BAR ",
-        "date": "30/04"
+        "date": "23/05"
       }
     ]
   },
