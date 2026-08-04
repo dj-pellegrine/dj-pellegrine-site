@@ -42,24 +42,24 @@
     "title": "AGENDA",
     "events": [
       {
-        "name": "MANDELÃO NO DOKA",
-        "place": "DOKA BAR",
-        "date": "08/05"
+        "name": "BY SELECT",
+        "place": "TERRAZO",
+        "date": "07/08"
+      },
+      {
+        "name": "SUBMUNDO 808",
+        "place": "KOMPLEXO TEMPO",
+        "date": "08/08"
       },
       {
         "name": "BAILE NO PORÃO",
         "place": "DOKA BAR",
-        "date": "16/05"
-      },
-      {
-        "name": "FLUXO 808",
-        "place": "CAMPINAS HALL",
-        "date": "16/05"
+        "date": "15/08"
       },
       {
         "name": "FLUXO 360",
         "place": "DOKA BAR ",
-        "date": "23/05"
+        "date": "22/08"
       }
     ]
   },
@@ -68,10 +68,16 @@
     "items": [
       {
         "type": "album",
+        "title": "HARDFUNK",
+        "url": "https://youtube.com/playlist?list=OLAK5uy_lF4UhmxwBel8IP5EmthhSykeQ86dav8Y0&si=bX6u1VrBqaLhx5Zr",
+        "thumbnail": ""
+      },
+      {
+        "type": "album",
         "title": "O Mais Brabo da Putaria",
         "url": "https://youtube.com/playlist?list=OLAK5uy_k7GIDleMSnyu3-GSJE6BScQAcoU2reWWA&si=pldZS7a8l8qiWG2v",
         "thumbnail": "pics/thumbs/AlbumOmaisBrabo.jpeg"
-      },
+      },  
       {
         "type": "album",
         "title": "Sessão de Grave",
@@ -89,6 +95,30 @@
         "title": "Explode Técnico de Som",
         "url": "https://youtu.be/lwppuVE2ZWk?si=ILIUOcWe5aCcJxPU",
         "thumbnail": "pics/pellegrine_logo.jpeg"
+      },
+      {
+        "type": "musica",
+        "title": "Vai Tomando e Recebendo",
+        "url": "https://www.youtube.com/watch?v=oe0kQPkU_3I",
+        "thumbnail": ""
+      },
+      {
+        "type": "musica",
+        "title": "Inocencia Maldita",
+        "url": "https://www.youtube.com/watch?v=plPrJ7bdtqE",
+        "thumbnail": ""
+      },
+      {
+        "type": "musica",
+        "title": "Só vou Te Arrasta pro Beko",
+        "url": "https://www.youtube.com/watch?v=c4mCxKQuKIo",
+        "thumbnail": ""
+      {
+        "type": "musica",
+        "title": "multa Por Causa De Puta",
+        "url": "https://www.youtube.com/watch?v=1LZOT2mByZk",
+        "thumbnail": ""
+      },
       },
       {
         "type": "musica",
